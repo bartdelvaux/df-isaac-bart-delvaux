@@ -1,0 +1,20 @@
+{
+	"name": "json_datalake",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "storage_data_lake",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "@concat(pipeline().RunID, \".json\")",
+				"folderPath": "isaac-bart-delvaux",
+				"fileSystem": "demo"
+			}
+		},
+		"schema": {}
+	}
+}

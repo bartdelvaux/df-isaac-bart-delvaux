@@ -1,0 +1,10 @@
+{
+	"name": "df_keyvault",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://kv-isaac.vault.azure.net/"
+		}
+	}
+}
