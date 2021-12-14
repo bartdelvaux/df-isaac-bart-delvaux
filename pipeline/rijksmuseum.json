@@ -18,8 +18,47 @@
 					"url": "https://www.rijksmuseum.nl/api/nl/collection?key=6epvixwD",
 					"method": "GET"
 				}
+			},
+			{
+				"name": "loop-trough-art-objects",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "rijsmuseum-collections",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('rijsmuseum-collections').output",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "Append variable1",
+							"type": "AppendVariable",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "art-objects",
+								"value": {
+									"value": "@item()",
+									"type": "Expression"
+								}
+							}
+						}
+					]
+				}
 			}
 		],
+		"variables": {
+			"art-objects": {
+				"type": "Array"
+			}
+		},
 		"annotations": []
 	}
 }
