@@ -29,7 +29,93 @@
 							"type": "JsonWriteSettings"
 						}
 					},
-					"enableStaging": false
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "CustomerID",
+									"type": "Int32"
+								},
+								"sink": {
+									"path": "$['CustomerID']"
+								}
+							},
+							{
+								"source": {
+									"name": "FirstName",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['FirstName']"
+								}
+							},
+							{
+								"source": {
+									"name": "MiddleName",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['MiddleName']"
+								}
+							},
+							{
+								"source": {
+									"name": "LastName",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['LastName']"
+								}
+							},
+							{
+								"source": {
+									"name": "EmailAddress",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['EmailAddress']"
+								}
+							},
+							{
+								"source": {
+									"name": "Phone",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['Phone']"
+								}
+							},
+							{
+								"source": {
+									"name": "PasswordHash",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['PasswordHash']"
+								}
+							},
+							{
+								"source": {
+									"name": "PasswordSalt",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['PasswordSalt']"
+								}
+							},
+							{
+								"source": {
+									"name": "rowguid",
+									"type": "Guid"
+								},
+								"sink": {
+									"path": "$['rowguid']"
+								}
+							}
+						]
+					}
 				},
 				"inputs": [
 					{
