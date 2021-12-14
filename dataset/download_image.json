@@ -1,0 +1,16 @@
+{
+	"name": "download_image",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "image_downloader",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation"
+			}
+		}
+	}
+}

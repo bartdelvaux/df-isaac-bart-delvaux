@@ -38,17 +38,74 @@
 					},
 					"activities": [
 						{
-							"name": "add-url",
-							"type": "AppendVariable",
+							"name": "download-image",
+							"type": "WebActivity",
 							"dependsOn": [],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
 							"userProperties": [],
 							"typeProperties": {
-								"variableName": "art-objects",
-								"value": {
+								"url": {
 									"value": "@item().webImage.url",
 									"type": "Expression"
-								}
+								},
+								"method": "GET"
 							}
+						},
+						{
+							"name": "Copy data1",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "BinarySource",
+									"storeSettings": {
+										"type": "HttpReadSettings",
+										"requestMethod": "GET"
+									},
+									"formatSettings": {
+										"type": "BinaryReadSettings"
+									}
+								},
+								"sink": {
+									"type": "BinarySink",
+									"storeSettings": {
+										"type": "AzureBlobFSWriteSettings"
+									}
+								},
+								"enableStaging": false
+							},
+							"inputs": [
+								{
+									"referenceName": "download_image",
+									"type": "DatasetReference"
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "write_image",
+									"type": "DatasetReference",
+									"parameters": {
+										"image-name": {
+											"value": "@item().webImage.guid",
+											"type": "Expression"
+										}
+									}
+								}
+							]
 						}
 					]
 				}
