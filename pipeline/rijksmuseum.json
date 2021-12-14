@@ -38,14 +38,14 @@
 					},
 					"activities": [
 						{
-							"name": "Append variable1",
+							"name": "add-url",
 							"type": "AppendVariable",
 							"dependsOn": [],
 							"userProperties": [],
 							"typeProperties": {
 								"variableName": "art-objects",
 								"value": {
-									"value": "@item()",
+									"value": "@item().webImage.url",
 									"type": "Expression"
 								}
 							}
