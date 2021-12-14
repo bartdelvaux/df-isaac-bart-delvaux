@@ -1,0 +1,9 @@
+{
+	"name": "df-isaac-bart-delvaux",
+	"location": "westeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "58085b7b-fdaf-4ccf-acf3-c5de3b4d4415",
+		"tenantId": "3d4d17ea-1ae4-4705-947e-51369c5a5f79"
+	}
+}
