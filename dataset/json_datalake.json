@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "@concat(pipeline().RunId, \".json\")",
+				"fileName": "@concat(pipeline().RunID, \".json\")",
 				"folderPath": "isaac-bart-delvaux",
 				"fileSystem": "demo"
 			}
