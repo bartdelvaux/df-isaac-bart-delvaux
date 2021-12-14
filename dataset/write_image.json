@@ -16,7 +16,7 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": {
-					"value": "@dataset().image-name",
+					"value": "test.jpg",
 					"type": "Expression"
 				},
 				"folderPath": "isaac-bart-delvaux",
