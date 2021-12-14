@@ -77,13 +77,7 @@
 							"outputs": [
 								{
 									"referenceName": "write_image",
-									"type": "DatasetReference",
-									"parameters": {
-										"image-name": {
-											"value": "@item().webImage.guid",
-											"type": "Expression"
-										}
-									}
+									"type": "DatasetReference"
 								}
 							]
 						}
