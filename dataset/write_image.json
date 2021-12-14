@@ -1,0 +1,27 @@
+{
+	"name": "write_image",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "storage_data_lake",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"image-name": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().image-name",
+					"type": "Expression"
+				},
+				"folderPath": "isaac-bart-delvaux",
+				"fileSystem": "demo"
+			}
+		}
+	}
+}
