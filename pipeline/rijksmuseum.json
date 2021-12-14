@@ -33,7 +33,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('rijsmuseum-collections').output",
+						"value": "@activity('rijsmuseum-collections').output.artObjects",
 						"type": "Expression"
 					},
 					"activities": [
