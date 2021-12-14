@@ -77,7 +77,10 @@
 							"outputs": [
 								{
 									"referenceName": "write_image",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"image-name": "-"
+									}
 								}
 							]
 						}
